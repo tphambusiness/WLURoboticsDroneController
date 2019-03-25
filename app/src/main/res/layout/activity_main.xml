@@ -176,7 +176,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="121dp"
         android:layout_marginTop="11dp"
-        android:src="@drawable/connection_estab_3_green"
+        android:src="@drawable/connection_estab"
         android:visibility="visible" />
 
 </RelativeLayout>
