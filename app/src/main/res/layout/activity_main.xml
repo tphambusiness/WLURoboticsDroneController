@@ -168,4 +168,15 @@
         android:layout_toStartOf="@+id/textView_strength_right"
         android:text="RStr" />
 
+    <ImageView
+        android:id="@+id/connection_status"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/connection_estab_3_green"
+        android:visibility="visible" />
+
 </RelativeLayout>
