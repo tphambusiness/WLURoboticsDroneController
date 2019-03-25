@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAngleRight;
     private TextView mTextViewStrengthRight;
     private TextView mTextViewCoordinateRight;
-    boolean connection;
-    private ImageView connectImageView = (ImageView)findViewById(R.id.connection_status);
+    boolean connection = true;
+    private ImageView connectImageView = findViewById(R.id.connection_status);
 
 
     @Override
@@ -58,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (connection == true) {
-            connectImageView.setImageResource(R.drawable.connection_estab);
+            connectImageView.setImageResource(R.drawable.connection_estab_3_green);
 
         }
 
         else {
-            connectImageView.setImageResource(R.drawable.connection_denied);
+            connectImageView.setImageResource(R.drawable.connection_denied_3_green);
 
         }
 
