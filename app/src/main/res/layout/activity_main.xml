@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4f5b62"
     tools:context="io.github.controlwear.joystickdemo.MainActivity"
     android:padding="16dp">
 
@@ -16,7 +17,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="116dp"
         android:layout_toStartOf="@+id/textView_angle_right"
-        android:text="0°" />
+        android:text="0°"
+        android:textColor="#ffffff" />
 
 
     <TextView
@@ -27,7 +29,8 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="116dp"
         android:layout_toStartOf="@+id/textView_strength_right"
-        android:text="0%" />
+        android:text="0%"
+        android:textColor="#ffffff" />
 
 
     <TextView
@@ -35,7 +38,8 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
-        android:text="0°" />
+        android:text="0°"
+        android:textColor="#ffffff" />
 
 
     <TextView
@@ -45,16 +49,18 @@
         android:layout_below="@+id/textView_angle_right"
         android:layout_alignParentRight="true"
         android:layout_marginTop="0dp"
-        android:text="0%" />
+        android:text="0%"
+        android:textColor="#ffffff" />
 
 
     <TextView
         android:id="@+id/textView_coordinate_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/textView_strength_right"
-        android:text="x050:x050"/>
+        android:layout_alignParentRight="true"
+        android:text="x050:x050"
+        android:textColor="#ffffff" />
 
 
     <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
@@ -67,10 +73,10 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="14dp"
-        custom:JV_backgroundColor="#009688"
-        custom:JV_borderColor="#00796B"
-        custom:JV_borderWidth="8dp"
-        custom:JV_buttonColor="#FF6E40" />
+        custom:JV_backgroundColor="#263238"
+        custom:JV_borderColor="#000a12"
+        custom:JV_borderWidth="9dp"
+        custom:JV_buttonColor="#dd2c00" />
 
     <io.github.controlwear.virtual.joystick.android.JoystickView
         android:id="@+id/joystickView_left"
@@ -82,10 +88,10 @@
         android:layout_marginStart="51dp"
         android:layout_marginRight="390dp"
         android:layout_marginBottom="7dp"
-        custom:JV_backgroundColor="#4b4b4b"
-        custom:JV_borderColor="#1f1f1f"
+        custom:JV_backgroundColor="#263238"
+        custom:JV_borderColor="#000a12"
         custom:JV_borderWidth="9dp"
-        custom:JV_buttonColor="#d80d1d" />
+        custom:JV_buttonColor="#dd2c00" />
 
     <Button
         android:id="@+id/hover_button"
@@ -107,18 +113,8 @@
         android:layout_marginTop="0dp"
         android:text="Takeoff" />
 
-    <Button
-        android:id="@+id/landing_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="43dp"
-        android:text="Landing" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/hover_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -136,7 +132,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="22dp"
         android:layout_toStartOf="@+id/textView_angle_left"
-        android:text="LAng" />
+        android:text="LAng"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/lstr-text"
@@ -146,7 +143,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="23dp"
         android:layout_toStartOf="@+id/textView_angle_left"
-        android:text="LStr" />
+        android:text="LStr"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/Rangle-text"
@@ -156,7 +154,8 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="21dp"
         android:layout_toStartOf="@+id/textView_strength_right"
-        android:text="RAng" />
+        android:text="RAng"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/rstr-text"
@@ -166,7 +165,8 @@
         android:layout_marginTop="0dp"
         android:layout_marginEnd="20dp"
         android:layout_toStartOf="@+id/textView_strength_right"
-        android:text="RStr" />
+        android:text="RStr"
+        android:textColor="#ffffff" />
 
     <ImageView
         android:id="@+id/connection_status"
@@ -174,8 +174,8 @@
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="7dp"
         android:src="@drawable/connection_estab"
         android:visibility="visible" />
 

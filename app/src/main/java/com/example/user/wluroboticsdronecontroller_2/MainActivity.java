@@ -34,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
             public void onMove(int angle, int strength) {
                 mTextViewAngleLeft.setText(angle + "°");
                 mTextViewStrengthLeft.setText(strength + "%");
+                if (45 < angle && angle < 135) {
+                    // send strength to arduino ascending upwards
+                }
+                else if (225 < angle && angle < 315) {
+                    // send strength to arduino descending downwards
+                }
+                else if (135 < angle && angle < 225) {
+                    // send strength to arduino turning clockwise/to the left
+                }
+                else if ((0 < angle && angle < 45) || (315 < angle && angle < 360)) {
+                    // send strength to arduino turning counterclockwise/to the right
+                }
             }
         });
 
@@ -54,18 +66,32 @@ public class MainActivity extends AppCompatActivity {
                                 joystickRight.getNormalizedX(),
                                 joystickRight.getNormalizedY())
                 );
+                if (45 < angle && angle < 135) {
+                    // send strength to arduino moving forwards
+                }
+                else if (225 < angle && angle < 315) {
+                    // send strength to arduino moving backwards
+                }
+                else if (135 < angle && angle < 225) {
+                    // send strength to arduino moving left
+                }
+                else if ((0 < angle && angle < 45) || (315 < angle && angle < 360)) {
+                    // send strength to arduino moving right
+                }
             }
         });
 
         if (connection == true) {
-            connectImageView.setImageResource(R.drawable.connection_estab_3_green);
+            connectImageView.setImageResource(R.drawable.connection_estab);
 
         }
 
         else {
-            connectImageView.setImageResource(R.drawable.connection_denied_3_green);
+            connectImageView.setImageResource(R.drawable.connection_denied);
 
         }
+
+
 
     }
 }
