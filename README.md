@@ -6,7 +6,7 @@ The drone will connect via Bluetooth and the app will communicate with an Arduin
 
 Material Palette: [Blue Grey / Deep Orange](https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=263238&secondary.color=DD2C00)
 
-API Level: Nougat (Android 7.1.1)
+API Level: 25 (Android Nougat 7.1.1)
 
 To-do:
 
