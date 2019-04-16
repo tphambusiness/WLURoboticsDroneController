@@ -1,6 +1,8 @@
 package com.example.user.wluroboticsdronecontroller_2;
 
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewCoordinateRight;
     boolean connection = true;
     private ImageView connectImageView = findViewById(R.id.connection_status);
+    BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
 
     @Override
@@ -81,14 +84,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if (connection == true) {
-            connectImageView.setImageResource(R.drawable.connection_estab);
 
+        if (!bluetoothAdapter.isEnabled()) {
+            connectImageView.setImageResource(R.drawable.connection_estab);
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            //startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
         else {
             connectImageView.setImageResource(R.drawable.connection_denied);
-
         }
 
 
