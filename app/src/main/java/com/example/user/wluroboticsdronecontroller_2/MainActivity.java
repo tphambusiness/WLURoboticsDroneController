@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAngleRight;
     private TextView mTextViewStrengthRight;
     private TextView mTextViewCoordinateRight;
-    boolean connection = true;
     private ImageView connectImageView = findViewById(R.id.connection_status);
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Section for left joystick
         mTextViewAngleLeft = (TextView) findViewById(R.id.textView_angle_left);
         mTextViewStrengthLeft = (TextView) findViewById(R.id.textView_strength_left);
 
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             public void onMove(int angle, int strength) {
                 mTextViewAngleLeft.setText(angle + "°");
                 mTextViewStrengthLeft.setText(strength + "%");
+                // changes debug text for angle and strength
+
                 if (45 < angle && angle < 135) {
                     // send strength to arduino ascending upwards
                 }
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        // Section for right joystick
         mTextViewAngleRight = (TextView) findViewById(R.id.textView_angle_right);
         mTextViewStrengthRight = (TextView) findViewById(R.id.textView_strength_right);
         mTextViewCoordinateRight = findViewById(R.id.textView_coordinate_right);
@@ -64,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
             public void onMove(int angle, int strength) {
                 mTextViewAngleRight.setText(angle + "°");
                 mTextViewStrengthRight.setText(strength + "%");
+                // changes debug text for angle and strength
                 mTextViewCoordinateRight.setText(
                         String.format("x%03d:y%03d",
                                 joystickRight.getNormalizedX(),
                                 joystickRight.getNormalizedY())
+                        // changes debug text for "coordinates"?
                 );
                 if (45 < angle && angle < 135) {
                     // send strength to arduino moving forwards
@@ -86,12 +90,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (!bluetoothAdapter.isEnabled()) {
+            // looks for bluetooth adapter to be enabled
             connectImageView.setImageResource(R.drawable.connection_estab);
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             //startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
         else {
+            // changes status image if bluetooth adapter is not enabled
             connectImageView.setImageResource(R.drawable.connection_denied);
         }
 
